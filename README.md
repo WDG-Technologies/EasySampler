@@ -10,22 +10,26 @@ No es un rompler. No hay librerías ni capas. Es el sampler de canal que abres, 
 
 Tienes un audio que suena bien. Quieres tocarlo en otras notas, con cola, con pedal, en modo mono si hace falta. Montar eso en un sampler grande te frena. EasySampler no.
 
-## Cómo trabaja
+## Cómo se usa
 
-Cargas el archivo. Detecta (o tú eliges) la **root note**: esa tecla suena al tono original; el resto transpone limpio, con resample sinc. Hasta **16 voces**. Al soltar, el **release** funde la cola. El **pedal** (CC64) sostiene. **Cortar nota anterior** apaga la de atrás para bajos y leads.
+1. Cargas tu sample.
+2. La **root note** es la tecla del tono original (se detecta sola o la eliges).
+3. El resto de teclas lo transpone.
+4. Al soltar, el **release** da cola a la nota.
+5. El **pedal** sostiene; **cortar nota anterior** deja una sola nota sonando (ideal para bajos y leads).
 
-El sample va **dentro del proyecto**. Cierras la DAW, la abres, sigue ahí.
-
-Si la tecla dura más que el archivo, el audio se acaba (one-shot, como un sampler de canal). Si sueltas antes, entra el release.
+El sample queda guardado en el proyecto: cierras la DAW, la abres, sigue ahí.
 
 ## Qué incluye
 
-- Plugin **VST3 64-bit** para Windows 10 / 11  
-- App **Standalone** (MIDI o teclas Z–M)  
-- Instalador MSI  
+- Plugin **VST3** para Windows 10 / 11  
+- App **Standalone** para tocar sin DAW  
+- Instalador sencillo  
 
-[**Descargar EasySampler**](https://github.com/WDG-Technologies/EasySample/releases/download/v1.0/EasySampler-0.2.0.msi) · [Versiones](https://github.com/WDG-Technologies/EasySample/releases) · [Página](https://wdg-technologies.github.io/EasySample/)
+[**Descargar EasySampler**](https://github.com/WDG-Technologies/EasySampler/releases/download/v1.0/EasySampler-0.2.0.msi) · [Versiones](https://github.com/WDG-Technologies/EasySampler/releases) · [Página](https://wdg-technologies.github.io/EasySampler/)
 
-Tras instalar: VST3 en `C:\Program Files\Common Files\VST3\`. Rescanea plugins en tu DAW.
+Tras instalar, rescanea plugins en tu DAW.
 
-Código cerrado. VST es marca de Steinberg Media Technologies GmbH.
+Este repositorio es la **página pública y la documentación de producto**. El código fuente no se publica.
+
+Software de código cerrado. VST es marca de Steinberg Media Technologies GmbH.
