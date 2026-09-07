@@ -1,35 +1,37 @@
 # EasySampler
 
-**Tu sample. Todas las notas.**
+**Your sample. Every note.**
 
-EasySampler es un instrumento VST3 de [WDG Technologies](https://github.com/WDG-Technologies): cargas un WAV, FLAC o MP3 y lo tocas como un synth. Un hit, un chord, una voz, un pad — lo melodizas en el piano roll, con teclado MIDI o con el pedal.
+English · [Español](README.es.md)
 
-No es un rompler. No hay librerías ni capas. Es el sampler de canal que abres, cargas y ya estás escribiendo.
+EasySampler is a VST3 instrument by [WDG Technologies](https://github.com/WDG-Technologies): load a WAV, FLAC or MP3 and play it like a synth. A hit, a chord, a vocal, a pad — write it on the piano roll, with a MIDI keyboard, or with the pedal.
 
-## El problema
+Not a rompler. No libraries, no layers. It’s the channel sampler you open, load, and start writing with.
 
-Tienes un audio que suena bien. Quieres tocarlo en otras notas, con cola, con pedal, en modo mono si hace falta. Montar eso en un sampler grande te frena. EasySampler no.
+## The problem
 
-## Cómo se usa
+You have audio that already sounds right. You want it on other notes, with a tail, with a pedal, mono when you need it. Building that in a big sampler slows you down. EasySampler doesn’t.
 
-1. Cargas tu sample.
-2. La **root note** es la tecla del tono original (se detecta sola o la eliges).
-3. El resto de teclas lo transpone.
-4. Al soltar, el **release** da cola a la nota.
-5. El **pedal** sostiene; **cortar nota anterior** deja una sola nota sonando (ideal para bajos y leads).
+## How you use it
 
-El sample queda guardado en el proyecto: cierras la DAW, la abres, sigue ahí.
+1. Load your sample.
+2. The **root note** is the key for the original pitch (auto-detected or chosen by you).
+3. Other keys transpose it.
+4. On note-off, **release** gives the note a tail.
+5. The **pedal** holds; **cut previous note** keeps only one note sounding (great for bass and leads).
 
-## Qué incluye
+The sample is stored in the project: close the DAW, reopen it, it’s still there.
 
-- Plugin **VST3** para Windows 10 / 11  
-- App **Standalone** para tocar sin DAW  
-- Instalador sencillo  
+## What’s included
 
-[**Descargar EasySampler**](https://github.com/WDG-Technologies/EasySampler/releases/download/v1.0/EasySampler-0.2.0.msi) · [Versiones](https://github.com/WDG-Technologies/EasySampler/releases) · [Página](https://wdg-technologies.github.io/EasySampler/)
+- **VST3** plugin for Windows 10 / 11  
+- **Standalone** app to play without a DAW  
+- Simple installer  
 
-Tras instalar, rescanea plugins en tu DAW.
+[**Download EasySampler**](https://github.com/WDG-Technologies/EasySampler/releases/download/v1.0/EasySampler-0.2.0.msi) · [Releases](https://github.com/WDG-Technologies/EasySampler/releases) · [Page](https://wdg-technologies.github.io/EasySampler/)
 
-Este repositorio es la **página pública y la documentación de producto**. El código fuente no se publica.
+After installing, rescan plugins in your DAW.
 
-Software de código cerrado. VST es marca de Steinberg Media Technologies GmbH.
+This repository is the **public product page and documentation**. Source code is not published.
+
+Closed-source software. VST is a trademark of Steinberg Media Technologies GmbH.

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EasySampler — WDG Technologies</title>
-  <meta name="description" content="Sampler VST3 para Windows. Carga un WAV, FLAC o MP3 y tócalo con MIDI." />
+  <meta id="meta-desc" name="description" content="VST3 sampler for Windows. Load a WAV, FLAC or MP3 and play it with MIDI." />
   <link rel="icon" href="logo.png" />
   <style>
     :root {
@@ -31,8 +31,17 @@
     .brand img { width: 42px; height: 42px; border-radius: 10px; }
     .brand strong { font-size: 15px; letter-spacing: 0.04em; }
     .brand span { display: block; color: var(--mute); font-size: 12px; font-weight: 400; }
-    nav a { color: var(--mute); text-decoration: none; font-size: 14px; }
-    nav a:hover { color: var(--mint); }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-right a { color: var(--mute); text-decoration: none; font-size: 14px; }
+    .nav-right a:hover { color: var(--mint); }
+    .lang {
+      display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden;
+    }
+    .lang button {
+      border: 0; background: transparent; color: var(--mute); font-size: 12px; font-weight: 700;
+      padding: 6px 10px; cursor: pointer; letter-spacing: 0.04em;
+    }
+    .lang button.active { background: var(--mint); color: #10161a; }
 
     .hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: center; }
     @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
@@ -118,17 +127,23 @@
           <span>WDG Technologies</span>
         </div>
       </a>
-      <nav><a href="https://github.com/WDG-Technologies/EasySampler/releases">Versiones</a></nav>
+      <div class="nav-right">
+        <a data-i18n="releases" href="https://github.com/WDG-Technologies/EasySampler/releases">Releases</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+          <button type="button" id="btn-es" onclick="setLang('es')">ES</button>
+        </div>
+      </div>
     </header>
 
     <section class="hero">
       <div>
-        <p class="kicker">Instrumento VST3</p>
-        <h1>Un sample.<br />Todas las notas.</h1>
-        <p class="lead">Carga un WAV, FLAC o MP3 y tócalo desde el piano roll, un teclado MIDI o el pedal. Sampler de canal: abres, cargas y escribes.</p>
+        <p class="kicker" data-i18n="kicker">VST3 instrument</p>
+        <h1 data-i18n-html="headline">One sample.<br />Every note.</h1>
+        <p class="lead" data-i18n="lead">Load a WAV, FLAC or MP3 and play it from the piano roll, a MIDI keyboard, or the sustain pedal. Channel-style sampler: open, load, write.</p>
         <div class="cta">
-          <a class="btn btn-main" href="https://github.com/WDG-Technologies/EasySampler/releases/download/v1.0/EasySampler-0.2.0.msi">Descargar para Windows</a>
-          <a class="btn btn-ghost" href="https://github.com/WDG-Technologies/EasySampler/releases/latest">Notas de la versión</a>
+          <a class="btn btn-main" data-i18n="download" href="https://github.com/WDG-Technologies/EasySampler/releases/download/v1.0/EasySampler-0.2.0.msi">Download for Windows</a>
+          <a class="btn btn-ghost" data-i18n="notes" href="https://github.com/WDG-Technologies/EasySampler/releases/latest">Release notes</a>
         </div>
         <div class="meta">
           <span class="chip">VST3</span>
@@ -149,12 +164,12 @@
           </div>
           <div class="card">
             <div class="row">
-              <button class="load" type="button">Cargar sample</button>
+              <button class="load" type="button" data-i18n="load">Load sample</button>
               <div class="name">piano_c3.wav</div>
             </div>
             <div class="lbl">ROOT NOTE</div>
             <div class="root">C3</div>
-            <p class="auto">detectada automaticamente</p>
+            <p class="auto" data-i18n="auto">detected automatically</p>
           </div>
           <div class="card">
             <div class="lbl">SUSTAIN / PEDAL</div>
@@ -163,9 +178,9 @@
               <div>
                 <div class="slide"><i></i><b></b></div>
               </div>
-              <div class="sec">cola</div>
+              <div class="sec" data-i18n="tail">tail</div>
             </div>
-            <div class="check"><span class="box">v</span> Cortar nota anterior al tocar otra</div>
+            <div class="check"><span class="box">v</span> <span data-i18n="cut">Cut previous note when playing another</span></div>
           </div>
         </div>
       </div>
@@ -173,23 +188,104 @@
 
     <section class="specs">
       <article class="spec">
-        <h3>Root note</h3>
-        <p>La tecla del tono original. El resto transpone. Se detecta sola o la eliges tú.</p>
+        <h3 data-i18n="s1t">Root note</h3>
+        <p data-i18n="s1p">The key for the original pitch. Everything else is transposed. Auto-detected or set by you.</p>
       </article>
       <article class="spec">
-        <h3>Pedal y release</h3>
-        <p>Sostén con el pedal. Al soltar, la cola se funde. Modo mono para no apilar notas.</p>
+        <h3 data-i18n="s2t">Pedal & release</h3>
+        <p data-i18n="s2p">Hold with the pedal. On release, the tail fades. Mono mode so notes don’t stack.</p>
       </article>
       <article class="spec">
-        <h3>En el proyecto</h3>
-        <p>El sample viaja con la sesión. Reabres el proyecto y sigue cargado.</p>
+        <h3 data-i18n="s3t">In the project</h3>
+        <p data-i18n="s3p">The sample travels with the session. Reopen the project and it’s still loaded.</p>
       </article>
     </section>
 
     <footer>
-      <p>Instala el MSI, rescanea plugins en tu DAW y listo. Standalone incluido en el menú Inicio.</p>
-      <p>Este sitio es documentación de producto. El código fuente no se publica. VST es marca de <a href="https://www.steinberg.net/">Steinberg Media Technologies GmbH</a>.</p>
+      <p data-i18n="f1">Install the MSI, rescan plugins in your DAW, and you’re set. Standalone is in the Start menu.</p>
+      <p data-i18n-html="f2">This site is product documentation. Source code is not published. VST is a trademark of <a href="https://www.steinberg.net/">Steinberg Media Technologies GmbH</a>.</p>
     </footer>
   </div>
+
+  <script>
+    const copy = {
+      en: {
+        desc: "VST3 sampler for Windows. Load a WAV, FLAC or MP3 and play it with MIDI.",
+        releases: "Releases",
+        kicker: "VST3 instrument",
+        headline: "One sample.<br />Every note.",
+        lead: "Load a WAV, FLAC or MP3 and play it from the piano roll, a MIDI keyboard, or the sustain pedal. Channel-style sampler: open, load, write.",
+        download: "Download for Windows",
+        notes: "Release notes",
+        load: "Load sample",
+        auto: "detected automatically",
+        tail: "tail",
+        cut: "Cut previous note when playing another",
+        s1t: "Root note",
+        s1p: "The key for the original pitch. Everything else is transposed. Auto-detected or set by you.",
+        s2t: "Pedal & release",
+        s2p: "Hold with the pedal. On release, the tail fades. Mono mode so notes don’t stack.",
+        s3t: "In the project",
+        s3p: "The sample travels with the session. Reopen the project and it’s still loaded.",
+        f1: "Install the MSI, rescan plugins in your DAW, and you’re set. Standalone is in the Start menu.",
+        f2: "This site is product documentation. Source code is not published. VST is a trademark of <a href=\"https://www.steinberg.net/\">Steinberg Media Technologies GmbH</a>."
+      },
+      es: {
+        desc: "Sampler VST3 para Windows. Carga un WAV, FLAC o MP3 y tócalo con MIDI.",
+        releases: "Versiones",
+        kicker: "Instrumento VST3",
+        headline: "Un sample.<br />Todas las notas.",
+        lead: "Carga un WAV, FLAC o MP3 y tócalo desde el piano roll, un teclado MIDI o el pedal. Sampler de canal: abres, cargas y escribes.",
+        download: "Descargar para Windows",
+        notes: "Notas de la versión",
+        load: "Cargar sample",
+        auto: "detectada automaticamente",
+        tail: "cola",
+        cut: "Cortar nota anterior al tocar otra",
+        s1t: "Root note",
+        s1p: "La tecla del tono original. El resto transpone. Se detecta sola o la eliges tú.",
+        s2t: "Pedal y release",
+        s2p: "Sostén con el pedal. Al soltar, la cola se funde. Modo mono para no apilar notas.",
+        s3t: "En el proyecto",
+        s3p: "El sample viaja con la sesión. Reabres el proyecto y sigue cargado.",
+        f1: "Instala el MSI, rescanea plugins en tu DAW y listo. Standalone incluido en el menú Inicio.",
+        f2: "Este sitio es documentación de producto. El código fuente no se publica. VST es marca de <a href=\"https://www.steinberg.net/\">Steinberg Media Technologies GmbH</a>."
+      }
+    };
+
+    function detectLang() {
+      const saved = localStorage.getItem("easysampler-lang");
+      if (saved === "en" || saved === "es") return saved;
+      const list = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || "en"];
+      for (const raw of list) {
+        const code = String(raw).toLowerCase();
+        if (code.startsWith("es")) return "es";
+        if (code.startsWith("en")) return "en";
+      }
+      return "en";
+    }
+
+    function setLang(lang) {
+      if (!copy[lang]) lang = "en";
+      localStorage.setItem("easysampler-lang", lang);
+      document.documentElement.lang = lang;
+      const t = copy[lang];
+      document.getElementById("meta-desc").setAttribute("content", t.desc);
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (t[key] != null) el.textContent = t[key];
+      });
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-html");
+        if (t[key] != null) el.innerHTML = t[key];
+      });
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+      document.getElementById("btn-es").classList.toggle("active", lang === "es");
+    }
+
+    setLang(detectLang());
+  </script>
 </body>
 </html>
