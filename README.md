@@ -28,7 +28,7 @@ The sample is stored in the project: close the DAW, reopen it, it’s still ther
 - **Standalone** app to play without a DAW  
 - Simple installer  
 
-[**Download EasySampler**](https://github.com/WDG-Technologies/EasySampler/releases/download/v1.0/EasySampler-0.2.0.msi) · [Releases](https://github.com/WDG-Technologies/EasySampler/releases) · [Page](https://wdg-technologies.github.io/EasySampler/)
+[**Download EasySampler**](https://github.com/WDG-Technologies/EasySampler/releases/download/v1.1/EasySampler-1.1.0.msi) · [Releases](https://github.com/WDG-Technologies/EasySampler/releases) · [Page](https://wdg-technologies.github.io/EasySampler/)
 
 After installing, rescan plugins in your DAW.
 
