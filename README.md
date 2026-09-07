@@ -1,8 +1,8 @@
 # EasySampler
 
-**Your sample. Every note.**
-
 English · [Español](README.es.md)
+
+**Your sample. Every note.**
 
 EasySampler is a VST3 instrument by [WDG Technologies](https://github.com/WDG-Technologies): load a WAV, FLAC or MP3 and play it like a synth. A hit, a chord, a vocal, a pad — write it on the piano roll, with a MIDI keyboard, or with the pedal.
 
