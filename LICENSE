@@ -1,0 +1,13 @@
+EasySampler
+Copyright (c) 2026 WDG Technologies. All rights reserved.
+
+This is closed-source proprietary software. You may install and use the
+compiled plugin. You may not copy, modify, reverse engineer, redistribute,
+or sublicense the software except as expressly permitted in writing by
+WDG Technologies.
+
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY.
+
+VST is a trademark of Steinberg Media Technologies GmbH.
+The VST3 SDK is used under Steinberg's VST 3 licensing terms.
+Audio decoding uses public-domain dr_libs (dr_wav / dr_flac / dr_mp3).

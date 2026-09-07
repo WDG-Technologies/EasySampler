@@ -34,4 +34,6 @@ After installing, rescan plugins in your DAW.
 
 This repository is the **public product page and documentation**. Source code is not published.
 
+See [LICENSE](LICENSE) for terms of use.
+
 Closed-source software. VST is a trademark of Steinberg Media Technologies GmbH.
